@@ -20,8 +20,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Kiểm tra token đăng nhập
-app.use(checkToken);
+
 
 // Serve static file
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
