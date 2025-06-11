@@ -1,0 +1,72 @@
+    /* Responsive */
+@media (max-width: 767px) {
+
+    /* LOGIN_REGISTER */
+    .square {
+        display: none;
+    }
+
+    main {
+        display: block;
+    }
+    #banner {
+        margin: 50px 0;
+    }
+    #banner, 
+    #form-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    #form-container {
+        padding: 0px 20px 0;
+    }
+
+    .container-logo {
+        font-size: 42px;
+    }
+
+    .container-logo::after {
+        font-size: 16px;
+        bottom: -23px;
+    }
+
+    h1 {
+        font-size: 15px;
+    }
+
+    .label-input input {
+        padding: 8px 16px;
+        font-size: 15px;
+    }
+
+    .label-input::before {
+        height: 54%;
+    }
+
+    .label-input label {
+        font-size: 13px;
+    }
+
+    #form-container button {
+        padding: 8px 16px;
+    }
+
+    .container-noti a {
+        font-size: 13px;
+    }
+
+    .label-input input:not(:placeholder-shown) + label,
+    .label-input input:focus + label {
+        top: -11px;
+        font-size: 10px;
+    }
+    #navbars {
+        display: none;
+    }
+    #content {
+        width: 100%;
+    }
+}

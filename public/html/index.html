@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FAKEBILL - Xác thực</title>
+    <link rel="stylesheet" href="static/css/reponsive.css">
+    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="static/css/base.css">
+
+</head>
+<body>
+    <main>
+        <section id="banner">
+            <div class="container-logo" data-text="F A K E B I L L" copyright="© Developed by ThanhDat & TaDung">
+                <span>F</span>
+                <span>A</span>
+                <span>K</span>
+                <span>E</span>
+                <span>B</span>
+                <span>I</span>
+                <span>L</span>
+                <span>L</span>
+            </div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </section>
+
+        <section id="form-container">
+            <h1 style="letter-spacing: 2px;">CHÀO MỪNG ĐẾN VỚI FAKEBILL 👋</h1>
+
+            <form class="form-login mg-t-b-30">
+                <div class="label-input">
+                    <input type="email" id="login-email" required placeholder=" " autocomplete="off">
+                    <label for="login-email">Email or Tên đăng nhập</label>
+                </div>
+                <div class="label-input">
+                    <input type="password" id="login-password" required placeholder=" ">
+                    <label for="login-password">Mật khẩu</label>
+                </div>
+                <div class="container-button">
+                    <button type="submit">Đăng nhập</button>
+                </div>
+                <div class="container-noti">
+                    <a href="#" onclick="direct_register_form(event)">Chưa có tài khoản? Đăng ký ngay</a>
+                </div>
+            </form>
+
+            <form class="form-register mg-t-b-30 none">
+                <div class="label-input">
+                    <input type="text" id="register-username" required placeholder=" " autocomplete="off">
+                    <label for="register-username">Tên đăng nhập</label>
+                </div>
+                <div class="label-input">
+                    <input type="email" id="register-email" required placeholder=" " autocomplete="off">
+                    <label for="register-email">Email</label>
+                </div>
+                <div class="label-input">
+                    <input type="password" id="register-password" required placeholder=" ">
+                    <label for="register-password">Mật khẩu</label>
+                </div>
+                <div class="label-input">
+                    <input type="password" id="register-repassword" required placeholder=" ">
+                    <label for="register-repassword">Xác nhận mật khẩu</label>
+                </div>
+                <div class="container-button">
+                    <button type="submit">Đăng Ký</button>
+                </div>
+                <div class="container-noti">
+                    <a href="#" onclick="direct_login_form(event)">Đã có tài khoản? Đăng nhập ngay</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function direct_login_form(e) {
+            e.preventDefault();
+            document.querySelector('.form-register').classList.add('none');
+            document.querySelector('.form-login').classList.remove('none');
+        }
+
+        function direct_register_form(e) {
+            e.preventDefault();
+            document.querySelector('.form-login').classList.add('none');
+            document.querySelector('.form-register').classList.remove('none');
+        }
+    </script>
+</body>
+</html>
