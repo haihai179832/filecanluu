@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 import { userRouter } from './routes/index.js';
 import connectDB from './database/database.js';
 import cookieParser from 'cookie-parser';
-import checkToken from './authentication/auth.js';
+// import checkToken from './authentication/auth.js'; // bỏ nếu không cần xác thực
 
 connectDB();
 
@@ -20,11 +20,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
-// Serve static file
+// Serve static files
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
-app.use('/html', express.static(path.join(__dirname, '../public/html'))); // <<< THÊM DÒNG NÀY
+app.use('/html', express.static(path.join(__dirname, '../public/html')));
 
 // Cấu hình view EJS
 app.set('views', path.join(__dirname, '../views'));
@@ -35,6 +33,11 @@ app.use('/auth', (req, res) => res.render('auth'));
 app.use('/user', userRouter);
 app.use('/home', (req, res) => res.render('home'));
 app.use('/test', (req, res) => res.render('mbbank'));
+
+// Route mặc định (GET /)
+app.get('/', (req, res) => {
+  res.redirect('/home'); // hoặc dùng: res.render('home');
+});
 
 // Khởi động server
 const PORT = process.env.PORT || 3000;
